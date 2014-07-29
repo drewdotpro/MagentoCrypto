@@ -32,7 +32,7 @@ $installer->startSetup();
 $connection = $installer->getConnection();
 $catalogProductEntityDecimal = $installer->getTable('catalog_product_entity_decimal');
 
-$connection->addColumn($catalogProductEntityDecimal, 'value', array(
+$connection->changeColumn($catalogProductEntityDecimal, 'value', array(
     'type'     => Varien_Db_Ddl_Table::TYPE_DECIMAL,
     'length'   => '12,12',
     'nullable' => true,
