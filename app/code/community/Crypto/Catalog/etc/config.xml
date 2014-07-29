@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Crypto_Catalog>
+            <version>1.0.0</version>
+        </Crypto_Catalog>
+    </modules>
+    <global>
+        <blocks>
+            <cryptocatalog>
+                <class>Crypto_Catalog_Block</class>
+            </cryptocatalog>
+        </blocks>
+        <models>
+            <cryptocatalog>
+                <class>Crypto_Payment_Model</class>
+            </cryptocatalog>
+        </models>
+        <resources>
+            <cryptocatalog_setup>
+                <setup>
+                    <module>Crypto_Payment</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </cryptocatalog_setup>
+            <cryptocatalog_write>
+                <connection>
+                  <use>core_write</use>
+                </connection>
+            </cryptocatalog_write>
+            <cryptocatalog_read>
+               <connection>
+                <use>core_read</use>
+              </connection>
+            </cryptocatalog_read>
+        </resources>
+    </global>
+    <default />
+</config>
