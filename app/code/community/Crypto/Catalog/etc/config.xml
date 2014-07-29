@@ -13,13 +13,13 @@
         </blocks>
         <models>
             <cryptocatalog>
-                <class>Crypto_Payment_Model</class>
+                <class>Crypto_Catalog_Model</class>
             </cryptocatalog>
         </models>
         <resources>
             <cryptocatalog_setup>
                 <setup>
-                    <module>Crypto_Payment</module>
+                    <module>Crypto_Catalog</module>
                 </setup>
                 <connection>
                     <use>core_setup</use>
