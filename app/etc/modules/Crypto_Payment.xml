@@ -20,19 +20,19 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    Crypto
- * @package     Crypto_Directory
+ * @package     Crypto_Payment
  * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 -->
 <config>
     <modules>
-        <Crypto_Directory>
+        <Crypto_Payment>
             <active>true</active>
             <codePool>community</codePool>
             <depends>
-            	<Mage_Directory />
+            	<Mage_Payment />
             </depends>
-        </Crypto_Directory>
+        </Crypto_Payment>
     </modules>
 </config>
