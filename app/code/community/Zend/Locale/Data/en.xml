@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ldml>
+	<numbers>
+		<currencies>
+			<currency type="BTC">
+				<displayName>Bitcoin</displayName>
+				<displayName count="one">Bitcoin</displayName>
+				<displayName count="other">Bitcoins</displayName>
+				<symbol>BTC</symbol>
+			</currency>
+		</currencies>
+	</numbers>
+</ldml>
