@@ -30,7 +30,7 @@ $installer = $this;
 $installer->startSetup();
 
 $connection = $installer->getConnection();
-$catalogProductEntityDecimal = $installer->getTable('catalog/product_entity_decimal');
+$catalogProductEntityDecimal = $installer->getTable('catalog_product_entity_decimal');
 
 $connection->addColumn($catalogProductEntityDecimal, 'value', array(
     'type'     => Varien_Db_Ddl_Table::TYPE_DECIMAL,
