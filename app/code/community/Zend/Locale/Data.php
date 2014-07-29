@@ -154,7 +154,7 @@ class Zend_Locale_Data
         if (empty(self::$_ldml[(string) $locale])) {
             $filename = dirname(__FILE__) . '/Data/' . $locale . '.xml';
             if (!file_exists($filename)) {
-                $filename = getcwd() . '/lib/Zend/Locale/Data/' . $local . '.xml';
+                $filename = Mage::getBaseDir() . '/lib/Zend/Locale/Data/' . $locale . '.xml';
                 if (!file_exists($filename)) {
                     #require_once 'Zend/Locale/Exception.php';
                     throw new Zend_Locale_Exception("Missing locale file '$filename' for '$locale' locale.");
