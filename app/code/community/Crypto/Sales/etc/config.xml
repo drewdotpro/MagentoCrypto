@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Crypto_Sales>
+            <version>1.0.0</version>
+        </Crypto_Sales>
+    </modules>
+    <global>
+        <blocks>
+            <cryptosales>
+                <class>Crypto_Sales_Block</class>
+            </cryptosales>
+        </blocks>
+        <models>
+            <sales>
+                <rewrite>
+                    <order>Crypto_Sales_Model_Order</order>
+                </rewrite>
+            </sales>
+            <cryptosales>
+                <class>Crypto_Sales_Model</class>
+                <resourceModel>cryptosales_resource</resourceModel>
+            </cryptosales>
+            <cryptosales_resource>
+                <class>Crypto_Sales_Model_Resource</class>
+            </cryptosales_resource>
+        </models>
+        <resources>
+            <cryptosales_setup>
+                <setup>
+                    <module>Crypto_Sales</module>
+                </setup>
+            </cryptosales_setup>
+        </resources>
+    </global>
+</config>

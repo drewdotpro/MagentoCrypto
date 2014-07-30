@@ -1,37 +1,36 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Crypto_Directory>
+        <Crypto_Core>
             <version>1.0.0</version>
-        </Crypto_Directory>
+        </Crypto_Core>
     </modules>
     <global>
         <blocks>
-            <cryptodirectory>
-                <class>Crypto_Directory_Block</class>
-            </cryptodirectory>
+            <cryptocore>
+                <class>Crypto_Core_Block</class>
+            </cryptocore>
         </blocks>
         <models>
-            <directory>
+            <core>
                 <rewrite>
-                    <currency>Crypto_Directory_Model_Currency</currency>
-                    <currency_filter>Crypto_Directory_Model_Currency_Filter</currency_filter>
+                    <store>Crypto_Core_Model_Store</store>
                 </rewrite>
-            </directory>
-            <cryptodirectory>
-                <class>Crypto_Directory_Model</class>
-                <resourceModel>cryptodirectory_resource</resourceModel>
-            </cryptodirectory>
-            <cryptodirectory_resource>
-                <class>Crypto_Directory_Model_Resource</class>
-            </cryptodirectory_resource>
+            </core>
+            <cryptocore>
+                <class>Crypto_Core_Model</class>
+                <resourceModel>cryptocore_resource</resourceModel>
+            </cryptocore>
+            <cryptocore_resource>
+                <class>Crypto_Core_Model_Resource</class>
+            </cryptocore_resource>
         </models>
         <resources>
-            <cryptodirectory_setup>
+            <cryptocore_setup>
                 <setup>
-                    <module>Crypto_Directory</module>
+                    <module>Crypto_Core</module>
                 </setup>
-            </cryptodirectory_setup>
+            </cryptocore_setup>
         </resources>
     </global>
     <!-- Insert BTC into the chain of installed system currencies -->

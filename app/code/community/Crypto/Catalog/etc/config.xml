@@ -12,6 +12,12 @@
             </cryptocatalog>
         </blocks>
         <models>
+            <catalog>
+                <rewrite>
+                    <layer_filter_price_algorithm>Crypto_Catalog_Model_Layer_Filter_Price_Algorithm</layer_filter_price_algorithm>
+                    <resource_product_collection>Crypto_Catalog_Model_Resource_Product_Collection</resource_product_collection>
+                </rewrite>
+            </catalog>
             <cryptocatalog>
                 <class>Crypto_Catalog_Model</class>
             </cryptocatalog>

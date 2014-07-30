@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Crypto_Bundle>
+            <version>1.0.0</version>
+        </Crypto_Bundle>
+    </modules>
+    <global>
+        <blocks>
+            <cryptobundle>
+                <class>Crypto_Bundle_Block</class>
+            </cryptobundle>
+        </blocks>
+        <models>
+            <bundle>
+                <rewrite>
+                    <resource_indexer_price>Crypto_Bundle_Model_Resource_Indexer_Price</resource_indexer_price>
+                </rewrite>
+            </bundle>
+            <cryptobundle>
+                <class>Crypto_Bundle_Model</class>
+            </cryptobundle>
+        </models>
+        <resources>
+            <cryptobundle_setup>
+                <setup>
+                    <module>Crypto_Bundle</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </cryptobundle_setup>
+            <cryptobundle_write>
+                <connection>
+                  <use>core_write</use>
+                </connection>
+            </cryptobundle_write>
+            <cryptobundle_read>
+               <connection>
+                <use>core_read</use>
+              </connection>
+            </cryptobundle_read>
+        </resources>
+    </global>
+    <default />
+</config>

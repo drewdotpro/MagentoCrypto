@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Crypto_Downloadable>
+            <version>1.0.0</version>
+        </Crypto_Downloadable>
+    </modules>
+    <global>
+        <blocks>
+            <downloadable>
+                <rewrite>
+                    <adminhtml_catalog_product_edit_tab_downloadable_links>Crypto_Downloadable_Block_Adminhtml_Catalog_Product_Edit_Tab_Downloadable_Links</adminhtml_catalog_product_edit_tab_downloadable_links>
+                </rewrite>
+            </downloadable>
+            <cryptodownloadable>
+                <class>Crypto_Downloadable_Block</class>
+            </cryptodownloadable>
+        </blocks>
+        <models>
+            <cryptodownloadable>
+                <class>Crypto_Downloadable_Model</class>
+                <resourceModel>cryptodownloadable_resource</resourceModel>
+            </cryptodownloadable>
+            <cryptodownloadable_resource>
+                <class>Crypto_Downloadable_Model_Resource</class>
+            </cryptodownloadable_resource>
+        </models>
+        <resources>
+            <cryptodownloadable_setup>
+                <setup>
+                    <module>Crypto_Downloadable</module>
+                </setup>
+            </cryptodownloadable_setup>
+        </resources>
+    </global>
+</config>

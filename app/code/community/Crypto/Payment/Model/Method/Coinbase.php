@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @author Daniel Kenney <admin@danielkenney.codes>
+ * Implementation of Coinbase API for Bitcoin
+ */
 class Crypto_Payment_Model_Method_Coinbase extends Mage_Payment_Model_Method_Abstract
 {
 	/**

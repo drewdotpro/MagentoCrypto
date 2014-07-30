@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Crypto_Payment>
-            <version>1.0</version>
+            <version>1.0.0</version>
         </Crypto_Payment>
     </modules>
 	<frontend>

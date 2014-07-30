@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Crypto_Checkout>
+            <version>1.0.0</version>
+        </Crypto_Checkout>
+    </modules>
+    <global>
+        <blocks>
+            <cryptocheckout>
+                <class>Crypto_Checkout_Block</class>
+            </cryptocheckout>
+        </blocks>
+        <models>
+            <directory>
+                <rewrite>
+                    <currency>Crypto_Checkout_Model_Currency</currency>
+                </rewrite>
+            </directory>
+            <cryptocheckout>
+                <class>Crypto_Checkout_Model</class>
+                <resourceModel>cryptocheckout_resource</resourceModel>
+            </cryptocheckout>
+            <cryptocheckout_resource>
+                <class>Crypto_Checkout_Model_Resource</class>
+            </cryptocheckout_resource>
+        </models>
+        <resources>
+            <cryptocheckout_setup>
+                <setup>
+                    <module>Crypto_Checkout</module>
+                </setup>
+            </cryptocheckout_setup>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <checkout>
+                <args>
+                    <modules>
+                        <Crypto_Checkout before="Mage_Checkout">Crypto_Checkout</Crypto_Checkout>
+                    </modules>
+                </args>
+            </checkout>
+        </routers>
+    </frontend>
+</config>

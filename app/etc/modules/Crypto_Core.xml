@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Crypto_Catalog>
+        <Crypto_Core>
             <active>true</active>
             <codePool>community</codePool>
             <depends>
-				<Mage_Catalog />
+				<Mage_Core />
             </depends>
-        </Crypto_Catalog>
+        </Crypto_Core>
     </modules>
 </config>
