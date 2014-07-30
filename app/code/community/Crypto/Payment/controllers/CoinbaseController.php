@@ -1,6 +1,6 @@
 <?php
 
-class Crypto_Controller_CoinbaseController extends Mage_Core_Controller_Front_Action
+class Crypto_Payment_Controller_CoinbaseController extends Mage_Core_Controller_Front_Action
 {
 	public function callbackAction() {
 		$secretKey = $this->getRequest()->getParam('secret');
