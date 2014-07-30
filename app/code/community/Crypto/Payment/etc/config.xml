@@ -27,6 +27,11 @@
                 <class>Crypto_Payment_Model</class>
             </cryptopayment>
         </models>
+        <helpers>
+            <cryptopayment>
+                <class>Crypto_Payment_Helper</class>
+            </cryptopayment>
+        </helpers>
         <resources>
             <cryptopayment_setup>
                 <setup>
