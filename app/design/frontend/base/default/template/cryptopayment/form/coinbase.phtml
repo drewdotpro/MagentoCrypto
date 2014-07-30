@@ -1,0 +1,23 @@
+<?php
+    $_code = $this->getMethodCode();
+    $_button = $this->getPaymentButton()->getButton();
+?>
+<ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <li>
+        <div class="coinbase-payment">
+            <div class="payment-button">
+                <?php if ($this->isIframe()): ?>
+                    <iframe src="https://coinbase.com/inline_payments/<?php echo $_button['code']; ?>" style="width: 500px; height: 160px; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.25); overflow: hidden;" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+                <?php elseif ($this->isButton()): ?>
+                    <iframe src="https://coinbase.com/buttons/<?php echo $_button['code']; ?>?code=<?php echo $_button['code']; ?>&amp;referrer=<?php echo Mage::getBaseUrl(); ?>" id="coinbase_button_iframe_<?php echo $_button['code']; ?>" name="coinbase_button_iframe_<?php echo $_button['code']; ?>" style="width: 211px; height: 46px; border: none; overflow: hidden;" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+                <?php elseif ($this->isPage()): ?>
+                    <a href="https://coinbase.com/checkouts/<?php echo $_button['code']; ?>" target="_blank"><img alt="Pay With Bitcoin" src="https://coinbase.com/assets/buttons/buy_now_large.png"></a>
+                    <span class="message"><?php echo $this->__('You will be taken off-site to finish your order!'); ?></span>
+                <?php endif; ?>
+            </div>
+            <div class="payment-message">
+                <?php echo $this->getPaymentMessage(); ?>
+            </div>
+        </div>
+    </li>
+</ul>

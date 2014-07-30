@@ -22,6 +22,11 @@
                 </rewrite>
             </adminhtml>
         </blocks>
+        <helpers>
+            <cryptoadminhtml>
+                <class>Crypto_Adminhtml_Helper</class>
+            </cryptoadminhtml>
+        </helpers>
         <models>
             <cryptoadminhtml>
                 <class>Crypto_Adminhtml_Model</class>

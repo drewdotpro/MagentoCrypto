@@ -1,0 +1,8 @@
+#payment_form_coinbase > li > div > div.payment-message {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#payment_form_coinbase > li > div > div.payment-button span.message {
+	font-size: 12px;
+}

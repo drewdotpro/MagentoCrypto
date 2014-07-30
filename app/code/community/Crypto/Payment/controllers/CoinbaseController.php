@@ -11,7 +11,8 @@ class Crypto_Payment_Controller_CoinbaseController extends Mage_Core_Controller_
 		$coinbase = Coinbase_Coinbase::withApiKey($apiKey, $apiSecret);
 
 		$orderInfo = $this->getRequest()->getParam('order');
-		$cbOrderId = $orderInfo['id'];
+		Mage::log($orderInfo);
+		$cbOrderId = isset($orderInfo['id']) ? $orderInfo['id'] : null;
 		$cbOrderData = $coinbase->getOrder($cbOrderId);
 
 		if (!$cbOrderData) {

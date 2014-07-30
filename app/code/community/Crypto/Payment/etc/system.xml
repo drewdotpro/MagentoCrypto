@@ -28,10 +28,29 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</title>
+						<interface translate="label">
+							<label>Frontend Interface</label>
+							<frontend_type>select</frontend_type>
+							<source_model>cryptoadminhtml/system_config_source_coinbase_interfaces</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Types supported: Button, Payment Page, and iFrame</comment>
+						</interface>
+						<message translate="label">
+							<label>Payment Message (optional)</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Provide a message below the Coinbase payment message.</comment>
+						</message>
 						<api_key translate="label">
 							<label>API Key</label>
 							<frontend_type>text</frontend_type>
-							<sort_order>3</sort_order>
+							<sort_order>4</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -39,7 +58,7 @@
 						<api_secret translate="label">
 							<label>API Secret</label>
 							<frontend_type>password</frontend_type>
-							<sort_order>4</sort_order>
+							<sort_order>5</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -47,7 +66,7 @@
 						<sort_order translate="label">
 							<label>Sort Order</label>
 							<frontend_type>text</frontend_type>
-							<sort_order>5</sort_order>
+							<sort_order>6</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -56,7 +75,7 @@
 						<custom_success_url translate="label">
 							<label>Custom success URL</label>
 							<frontend_type>text</frontend_type>
-							<sort_order>6</sort_order>
+							<sort_order>7</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -64,7 +83,7 @@
 						<custom_cancel_url translate="label">
 							<label>Custom cancel URL</label>
 							<frontend_type>text</frontend_type>
-							<sort_order>7</sort_order>
+							<sort_order>8</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>

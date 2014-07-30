@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout>
+	<default>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/cryptopayment.css</name>
+				<params/>
+			</action>
+		</reference>
+	</default>
+</layout>
