@@ -11,7 +11,7 @@
                 <use>standard</use>
                 <args>
                     <module>Crypto_Payment</module>
-                    <frontName>crypto</frontName>
+                    <frontName>cryptopayment</frontName>
                 </args>
             </crypto_payment>
         </routers>

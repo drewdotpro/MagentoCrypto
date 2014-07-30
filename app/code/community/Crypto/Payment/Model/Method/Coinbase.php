@@ -11,6 +11,12 @@ class Crypto_Payment_Model_Method_Coinbase extends Mage_Payment_Model_Method_Abs
 	protected $_code = 'coinbase';
 
 	/**
+	 * Form Details
+	 */
+    protected $_formBlockType = 'cryptopayment/form_coinbase';
+    protected $_infoBlockType = 'cryptopayment/info_coinbase';
+
+	/**
 	 * Availability Options
 	 */
 	protected $_isGateway               = true;
@@ -46,7 +52,7 @@ class Crypto_Payment_Model_Method_Coinbase extends Mage_Payment_Model_Method_Abs
 		$this->_apiKey = Mage::getStoreConfig('payment/coinbase/api_key', Mage::app()->getStore()->getId());
 		$this->_apiSecret = Mage::getStoreConfig('payment/coinbase/api_secret', Mage::app()->getStore()->getId());
 
-		if (is_null($apiKey) || is_null($apiSecret)) {
+		if (is_null($this->_apiKey) || is_null($this->_apiSecret)) {
 			Mage::throwException(Mage::helper('cryptopayment')->__('A valid Coinbase API Key and Secret must be provided in order to use this method.'));
 		}
 
@@ -54,11 +60,6 @@ class Crypto_Payment_Model_Method_Coinbase extends Mage_Payment_Model_Method_Abs
 		$this->_callbackSecret = Mage::getStoreConfig('payment/coinbase/callback_secret', Mage::app()->getStore()->getId());
 		$this->_successUrl = Mage::getStoreConfig('payment/coinbase/custom_success_url', Mage::app()->getStore()->getId());
 		$this->_cancelUrl = Mage::getStoreConfig('payment/coinbase/custom_cancel_url', Mage::app()->getStore()->getId());
-	}
-
-	public function authorize(Varien_Object $payment, $amount) {
-		$order = $payment->getOrder();
-		$currency = $order->getBaseCurrencyCode();
 
 		if($this->_callbackSecret == "generate") {
 			$this->_callbackSecret = md5('secret_' . mt_rand());
@@ -73,11 +74,16 @@ class Crypto_Payment_Model_Method_Coinbase extends Mage_Payment_Model_Method_Abs
 		if (is_null($this->_cancelUrl)) {
 			$this->_cancelUrl = Mage::getUrl('crypto_payment') . 'redirect/cancel';
 		}
+	}
 
-		$name = Mage::app()->getStore()->getName() . " - Order #" . $order['increment_id'];
-		$custom = $order->getId();
+	public function createButton() {
+		$amount = Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal();
+		$reservedId = Mage::getSingleton('checkout/session')->getQuote()->getReservedOrderId();
+		$name = Mage::app()->getStore()->getName() . " - Order #" . $reservedId;
+		$currency = Mage::app()->getStore()->getCurrentCurrencyCode();
+		$custom = $reservedId;
 		$params = array(
-			'description' => Mage::app()->getStore()->getName() . " - Order #" . $order['increment_id'],
+			'description' => Mage::app()->getStore()->getName() . " - Order #" . $reservedId,
 			'callback_url' => Mage::getUrl('crypto/ipn/index', array('secret' => $this->_callbackSecret)),
 			'success_url' => $this->_successUrl,
 			'cancel_url' => $this->_cancelUrl,
@@ -87,9 +93,16 @@ class Crypto_Payment_Model_Method_Coinbase extends Mage_Payment_Model_Method_Abs
 		try {
 			$this->_button = $this->_apiLink->createButton($name, $amount, $currency, $custom, $params);
 		} catch (Exception $e) {
-			Mage::logException("Could not generate Coinbase payment button. Please verify your Coinbase settings.");
+			Mage::logException($e);
 			Mage::throwException(Mage::helper('cryptopayment')->__('Unable to initiate Coinbase payment. Please try again later.'));
 		}
+
+		return $this->_button;
+	}
+
+	public function authorize(Varien_Object $payment, $amount) {
+		$order = $payment->getOrder();
+		$currency = $order->getBaseCurrencyCode();
 
 		return $this;
 	}
