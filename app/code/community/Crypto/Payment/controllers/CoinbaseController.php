@@ -4,11 +4,6 @@ class Crypto_Payment_Controller_CoinbaseController extends Mage_Core_Controller_
 {
 	public function callbackAction() {
 		$secretKey = $this->getRequest()->getParam('secret');
-		$correctSecret = Mage::getStoreConfig('payment/coinbase/callback_secret');
-
-		$apiKey = Mage::getStoreConfig('payment/coinbase/api_key');
-		$apiSecret = Mage::getStoreConfig('payment/coinbase/api_secret');
-		$coinbase = Coinbase_Coinbase::withApiKey($apiKey, $apiSecret);
 
 		$orderInfo = $this->getRequest()->getParam('order');
 		Mage::log($orderInfo);
