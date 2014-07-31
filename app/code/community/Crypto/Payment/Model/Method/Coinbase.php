@@ -66,7 +66,6 @@ class Crypto_Payment_Model_Method_Coinbase extends Crypto_Payment_Model_Method_A
 	}
 
 	public function createButton() {
-		Mage::log('creating button');
 		$amount = Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal();
 		$reservedId = Mage::getSingleton('checkout/session')->getQuote()->getReservedOrderId();
 		$name = Mage::app()->getStore()->getName() . " - Order #" . $reservedId;

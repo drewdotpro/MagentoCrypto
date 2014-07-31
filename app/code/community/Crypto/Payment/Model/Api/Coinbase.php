@@ -46,13 +46,12 @@ class Crypto_Payment_Model_Api_Coinbase extends Crypto_Payment_Model_Api_Abstrac
 		}
 	}
 
-	public function request($path, $method = 'GET', $params = array())
+	public function request($path, $method = Zend_Http_Client::GET, $params = array())
 	{
 		/**
 		 * Setup some values
 		 */
 		$queryString = http_build_query($params);
-		$postData = null;
 		$url = $this->_apiUrl . $path;
 		$microseconds = sprintf('%0.0f',round(microtime(true) * 1000000));
 
@@ -88,7 +87,7 @@ class Crypto_Payment_Model_Api_Coinbase extends Crypto_Payment_Model_Api_Abstrac
 			'ACCESS_NONCE: ' . $microseconds
 		);
 
-		$this->getCurl()->addOption(CURLOPT_CAINFO, Mage::getModuleDir('additional', 'Crypto_Payment') . 'coinbase/ca-coinbase.crt');
+		$this->getCurl()->addOption(CURLOPT_CAINFO, Mage::getModuleDir('', 'Crypto_Payment') . DS . 'additional/coinbase/ca-coinbase.crt');
 
 		try {
 			$this->getCurl()->write($method, $url, '1.1', $headers, $queryString);
