@@ -10,6 +10,8 @@
             <cryptotax>
                 <class>Crypto_Tax_Block</class>
             </cryptotax>
+        </blocks>
+        <models>
             <tax>
                 <rewrite>
                     <sales_total_quote_tax>Crypto_Tax_Model_Sales_Total_Quote_Tax</sales_total_quote_tax>
@@ -17,8 +19,6 @@
                     <calculation>Crypto_Tax_Model_Calculation</calculation>
                 </rewrite>
             </tax>
-        </blocks>
-        <models>
             <cryptotax>
                 <class>Crypto_Tax_Model</class>
             </cryptotax>
