@@ -30,11 +30,6 @@
             </cryptopayment>
         </blocks>
         <models>
-            <payment>
-                <rewrite>
-                    <method_abstract>Crypto_Payment_Model_Method_Abstract</method_abstract>
-                </rewrite>
-            </payment>
             <cryptopayment>
                 <class>Crypto_Payment_Model</class>
             </cryptopayment>

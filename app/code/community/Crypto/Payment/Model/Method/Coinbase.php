@@ -3,7 +3,7 @@
  * @author Daniel Kenney <admin@danielkenney.codes>
  * Implementation of Coinbase API for Bitcoin
  */
-class Crypto_Payment_Model_Method_Coinbase extends Mage_Payment_Model_Method_Abstract
+class Crypto_Payment_Model_Method_Coinbase extends Crypto_Payment_Model_Method_Abstract
 {
 	const INTERFACE_IFRAME = 0;
 	const INTERFACE_BUTTON = 1;
