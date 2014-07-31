@@ -17,7 +17,6 @@ class Crypto_Payment_Model_Method_Coinbase extends Crypto_Payment_Model_Method_A
 	 * Form Details
 	 */
     protected $_formBlockType = 'cryptopayment/form_coinbase';
-    protected $_infoBlockType = 'cryptopayment/info_coinbase';
 
 	/**
 	 * Availability Options
